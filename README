@@ -1,78 +1,51 @@
-#🌟 GitHub Actions, Docker, ECS, and ECR Project
+# 🌟 GitHub Actions, Docker, ECS, and ECR Project
 Welcome to the GitHub Actions Tutorial repository! This project will walk you through setting up a continuous deployment pipeline using GitHub Actions, Docker, ECS, and ECR.
 
-📚 Table of Contents
+## 📚 Table of Contents
 Project Overview
 Setup Instructions
 Continuous Deployment
 Resources
-Contributing
-License
-🚀 Project Overview
+
+## 🚀 Project Overview
 This project demonstrates a simple pipeline setup using GitHub Actions to automate the deployment of a Docker container to Amazon ECS using ECR for container storage. Perfect for those eager to streamline their cloud deployments!
 
-🛠 Setup Instructions
-Create Project Directory
 
-mkdir github-actions-tutorial
-Docker Setup
+## Step 1: Build and Test the Docker Image 
+1. Build the Docker image:
 
-Create a Dockerfile and build the image:
-bash
-Copy code
-docker build -t github-tutorial-image .
-Run a Container for Testing
+   ```bash
+   docker build -t github-actions-tutorial:latest .
+   ```
 
-Launch a simple Docker container:
-bash
-Copy code
-docker run -d -p 80:80 github-tutorial-image
-Amazon ECR Setup
+2. Run the container:
 
-Via AWS Console: Create a new ECR repository.
-Via AWS CLI:
-Authenticate:
-bash
-Copy code
-aws configure
-Create repository:
-bash
-Copy code
-aws ecr create-repository --repository-name github-actions-tuto
-Upload Docker Image to ECR
+   ```bash
+   docker run -p 8080:80 github-actions-tutorial:latest
+   ```
 
-Login to ECR:
-bash
-Copy code
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 637423409202.dkr.ecr.us-east-1.amazonaws.com
-Tag and push the image:
-bash
-Copy code
-docker tag github-tutorial-image:latest 637423409202.dkr.ecr.us-east-1.amazonaws.com/github-tutorial-image:latest
-docker push 637423409202.dkr.ecr.us-east-1.amazonaws.com/github-tutorial-image:latest
-Set Up GitHub Repository
+3. Open your browser and navigate to [http://localhost:8080](http://localhost:8080) to browse the website. 
 
-Create a new repo and push your code.
-ECS Cluster Creation
 
-Via CLI:
-bash
-Copy code
-aws ecs create-cluster --cluster-name github-actions-tutorial-ecs-cluster
-Via AWS Console: Use the console interface to create your cluster.
-AWS Configuration
+## Step 2: Push the Docker Image to a Container Registry (ECR) 
 
-Create an .aws folder and a task definition file.
-Configure CloudWatch Logs and IAM roles for ECS tasks.
-🔄 Continuous Deployment
-GitHub Actions Workflow
-Set up a workflow for automatic deployment to ECS upon git push.
-Configure AWS secrets in your GitHub repository settings.
-📘 Resources
-AWS CLI Documentation
-GitHub Actions Documentation
-🤝 Contributing
-We welcome contributions! Please feel free to submit a pull request or open an issue to discuss any changes.
+1. Authenticate via aws cli:
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+    ```bash
+   aws configure
+   ```
+2. Create repository:
+
+   ```bash
+   aws aws ecr create-repository --repository-name github-actions-tuto
+   ```
+3. Log in to the ECR: 
+   ```bash
+   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 637423409202.dkr.ecr.us-east-1.amazonaws.com
+   ```
+4. Tag and Push the image 
+   ```bash
+   docker tag github-tutorial-image:latest 637423409202.dkr.ecr.us-east-1.amazonaws.com/github-tutorial-image:latest
+   docker push 637423409202.dkr.ecr.us-east-1.amazonaws.com/github-tutorial-image:latest
+   ```
+
