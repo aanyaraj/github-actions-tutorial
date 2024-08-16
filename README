@@ -1,11 +1,6 @@
 # 🌟 GitHub Actions, Docker, ECS, and ECR Project
 Welcome to the GitHub Actions Tutorial repository! This project will walk you through setting up a continuous deployment pipeline using GitHub Actions, Docker, ECS, and ECR.
 
-## 📚 Table of Contents
-Project Overview
-Setup Instructions
-Continuous Deployment
-Resources
 
 ## 🚀 Project Overview
 This project demonstrates a simple pipeline setup using GitHub Actions to automate the deployment of a Docker container to Amazon ECS using ECR for container storage. Perfect for those eager to streamline their cloud deployments!
