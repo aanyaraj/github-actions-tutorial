@@ -1,7 +1,7 @@
-# 🌟 GitHub Actions, Docker, ECS, and ECR Project
+# 🌟Containerize and Deploy Your Website on AWS ECS with GitHub Actions 
+
+
 Welcome to the GitHub Actions Tutorial repository! This project will walk you through setting up a continuous deployment pipeline using GitHub Actions, Docker, ECS, and ECR.
-
-
 ## 🚀 Project Overview
 This project demonstrates a simple pipeline setup using GitHub Actions to automate the deployment of a Docker container to Amazon ECS using ECR for container storage. Perfect for those eager to streamline their cloud deployments!
 
@@ -9,38 +9,31 @@ This project demonstrates a simple pipeline setup using GitHub Actions to automa
 ## Step 1: Build and Test the Docker Image 
 1. Build the Docker image:
 
-   ```bash
-   docker build -t github-actions-tutorial:latest .
-   ```
-
+```bash
+docker build -t github-actions-tutorial:latest .
+```
 2. Run the container:
+```bash
+docker run -p 8080:80 github-actions-tutorial:latest
+```
+3. Open your browser and navigate to [http://localhost:8080](http://localhost:8080) to browse the website.
 
-   ```bash
-   docker run -p 8080:80 github-actions-tutorial:latest
-   ```
-
-3. Open your browser and navigate to [http://localhost:8080](http://localhost:8080) to browse the website. 
-
-
-## Step 2: Push the Docker Image to a Container Registry (ECR) 
-
-1. Authenticate via aws cli:
-
-    ```bash
-   aws configure
+## Step 2: Push the Docker Image to a Container Registry (ECR)
+1. Authenticate via aws cli :
+ ```bash
+ aws configure
    ```
 2. Create repository:
-
-   ```bash
-   aws aws ecr create-repository --repository-name github-actions-tuto
-   ```
+ ```bash
+ aws aws ecr create-repository --repository-name github-actions-tuto
+ ```
 3. Log in to the ECR: 
-   ```bash
-   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 637423409202.dkr.ecr.us-east-1.amazonaws.com
-   ```
-4. Tag and Push the image 
-   ```bash
-   docker tag github-tutorial-image:latest 637423409202.dkr.ecr.us-east-1.amazonaws.com/github-tutorial-image:latest
-   docker push 637423409202.dkr.ecr.us-east-1.amazonaws.com/github-tutorial-image:latest
-   ```
+```bash
+aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/github-actions-tutorial
+```
 
+4. Tag and Push the image 
+```bash
+docker tag github-actions-tutorial:latest <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/github-actions-tutorial
+docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/github-actions-tutorial1.amazonaws.com/github-tutorial-image:latest
+```
