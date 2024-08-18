@@ -1,132 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Saad Eddine Taleb Channel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Eddine Taleb - DevOps Engineer Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333; 
         }
-        
+
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding: 20px;
         }
-        
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #e4e4e4;
         }
-        
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+
+        .about,
+        .skills,
+        .projects,
+        .contact {
+            margin-bottom: 40px;
         }
-        
-        header ul {
+
+        h2 {
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
             padding: 0;
-            list-style: none;
         }
-        
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
+
+        ul li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-left: 5px solid #007acc;
         }
-        
-        header #branding {
-            float: left;
-        }
-        
-        header #branding h1 {
-            margin: 0;
-        }
-        
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        
-        .content {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-        }
-        
+
         footer {
-            background: #333;
-            color: #fff;
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 10px;
+            background-color: #007acc;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-
 <body>
+
     <header>
-        <div class="container">
-            <div id="branding">
-                <h1>Saad Eddine Channel</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Saad Eddine Taleb</h1>
+        <p>DevOps Engineer & Cloud Computing Enthusiast</p>
     </header>
 
     <div class="container">
-        <div class="content">
-            <h2>Welcome to THE new Website build after Git Commit</h2>
-            <p>Welcome to the Tiger4Code YouTube channel, your go-to source for insightful and comprehensive tutorials on cloud computing and artificial intelligence. Our mission is to make these advanced technologies accessible to everyone, from beginners
-                to seasoned professionals.</p>
-            <h3>Cloud Computing Content</h3>
-            <p>Our cloud computing tutorials cover a wide range of topics including:</p>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Passionate about cloud technologies and DevOps practices, I have developed expertise in Kubernetes, Terraform, and Amazon Web Services through academic projects and professional experience. Currently pursuing my final year of engineering studies at IMT Mines Albi, I am eager to apply my skills in a real-world environment.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
             <ul>
-                <li>Introduction to Cloud Computing</li>
-                <li>Amazon Web Services (AWS) Tutorials</li>
-                <li>Microsoft Azure Guides</li>
-                <li>Google Cloud Platform (GCP) Insights</li>
-                <li>Cloud Security Best Practices</li>
-                <li>DevOps and Cloud Integration</li>
+                <li><strong>Cloud Platforms:</strong> AWS, Azure, GCP</li>
+                <li><strong>Infrastructure as Code (IaC):</strong> Terraform, CloudFormation</li>
+                <li><strong>Containerization:</strong> Docker, Kubernetes</li>
+                <li><strong>CI/CD Pipelines:</strong> Jenkins, GitLab CI, GitHub Actions</li>
+                <li><strong>Monitoring & Logging:</strong> Prometheus, Grafana, ELK Stack</li>
+                <li><strong>Scripting:</strong> Bash, Python</li>
             </ul>
-            <h3>Artificial Intelligence Content</h3>
-            <p>Dive into the world of artificial intelligence with our engaging and informative videos on:</p>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
             <ul>
-                <li>Introduction to AI and Machine Learning</li>
-                <li>Deep Learning Techniques</li>
-                <li>AI in Python: Hands-on Tutorials</li>
-                <li>Natural Language Processing (NLP)</li>
-                <li>Computer Vision Applications</li>
-                <li>AI Ethics and Future Trends</li>
+                <li><strong>Project 1:</strong> VIN Extraction and SSL Connection with Java Keystore
+                    <p>Description: Developed a system to extract a Vehicle Identification Number (VIN) from an OTF tool and used it in a Java program to establish a secure SSL connection with a web service using a Java Keystore.</p>
+                </li>
+                <li><strong>Project 2:</strong> Cloud Infrastructure Automation with Terraform
+                    <p>Description: Automated the provisioning and management of cloud infrastructure on AWS using Terraform, including VPCs, EC2 instances, and S3 buckets.</p>
+                </li>
+                <li><strong>Project 3:</strong> Continuous Integration Pipeline with Jenkins
+                    <p>Description: Implemented a CI/CD pipeline using Jenkins to automate testing and deployment of a microservices-based application on Kubernetes.</p>
+                </li>
             </ul>
-            <p>Our content is designed to be practical and applicable, helping you to build the skills needed to excel in the rapidly evolving fields of cloud computing and AI. We publish new videos regularly, so be sure to subscribe to our channel and hit
-                the notification bell to stay updated with the latest tutorials.</p>
-            <p>Join the Tiger4Code community today and start your journey towards mastering cloud computing and artificial intelligence!</p>
-        </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:saadeddinetaleb98@gmail.com">saadeddinetaleb98@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/saad-taleb" target="_blank">linkedin.com/in/saad-eddine-taleb-9b5745209</a></p>
+            <p>GitHub: <a href="https://github.com/saadtaleb" target="_blank">github.com/saadtaleb98</a></p>
+        </section>
     </div>
 
     <footer>
-        <p>Tiger4Code YouTube Channel &copy; 2024</p>
+        <p>&copy; 2024 Saad Eddine Taleb. All Rights Reserved.</p>
     </footer>
-</body>
 
+</body>
 </html>
