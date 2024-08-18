@@ -32,12 +32,12 @@ on:
 
 env:
   AWS_REGION: "us-east-1"                  # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: "repository1"           # set this to your Amazon ECR repository name
-  ECS_SERVICE: "github-actions-tutorial-service-2"                # set this to your Amazon ECS service name
-  ECS_CLUSTER: "GithubActions-Tutorial-Cluster"                 # set this to your Amazon ECS cluster name
+  ECR_REPOSITORY: "github-acions-tutorial"           # set this to your Amazon ECR repository name
+  ECS_SERVICE: "git-service"                # set this to your Amazon ECS service name
+  ECS_CLUSTER: "github-actions-tutorial-ecs-cluster"                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ".aws/ecs-task-def.json" # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: "repository1"           # set this to the name of the container in the
+  CONTAINER_NAME: "git-test-container"           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 permissions:
